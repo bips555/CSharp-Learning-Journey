@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Advanced_C_Topics": {
+      "commandName": "Project",
+      "commandLineArgs": "\r\nsub 1 2\r\n"
+    }
+  }
+}

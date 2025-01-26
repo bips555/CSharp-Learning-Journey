@@ -1,0 +1,108 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="My First GUI" Height="450" Width="800">
+   
+        <!--
+        <Button>
+            <Button.Width>160</Button.Width>
+            <Button.Height>100</Button.Height>
+            <Button.FontSize>20</Button.FontSize>
+            <Button.Content>
+                <WrapPanel>
+                    <TextBlock Foreground="Blue">Multi</TextBlock>
+                    <TextBlock Foreground="Red">Color</TextBlock>
+                    <TextBlock Foreground="White">Button</TextBlock>
+                </WrapPanel>
+            </Button.Content>
+        </Button>
+       
+       -->
+   <!--
+     <StackPanel>
+     <TextBlock HorizontalAlignment="Center" Margin="20">Hello World!</TextBlock>
+     <ListBox HorizontalAlignment="Center">
+         <ListBoxItem Content="Item 1"/>
+         <ListBoxItem Content="Item 2"/>
+         <ListBoxItem Content="Item 3"/>
+     </ListBox>
+    -->
+    <!--    <Button Content="CLick me" MouseUp="Button_MouseUp"/> -->
+        <!-- Above is bubbling event which states that it moves up the visual tree and is not handled by the button itself but handled by upper elements.
+        MouseUp event that a parent container might handle after being triggered by a child element.-->
+        <!--  <Button Content="CLick me" PreviewMouseUp="Button_PreviewMouseUp"/> -->
+        <!-- Above is tunneling event which states that it moves down the visual tree and is handled by itself.
+        Tunneling Events: These propagate down the visual tree, allowing earlier handling before reaching the target element. An example is a PreviewMouseUp event.-->
+      <!--  <Button Content="Click me" PreviewMouseLeftButtonDown="Button_PreviewMouseLeftButtonDown" PreviewMouseRightButtonUp="Button_PreviewMouseRightButtonUp"/>
+    -->
+    
+        <!--
+        <Grid.ColumnDefinitions>
+    <ColumnDefinition Width="*"/>
+    <ColumnDefinition Width="*"/>
+    <ColumnDefinition Width="*"/>
+
+</Grid.ColumnDefinitions>
+<Grid.RowDefinitions>
+    <RowDefinition/>
+    <RowDefinition/>
+    <RowDefinition/>
+</Grid.RowDefinitions>
+<Button Content="button" Grid.Column="0" Grid.Row="0"></Button>
+<Button Content="button" Grid.Column="1" Grid.Row="0"></Button>
+<Button Content="button" Grid.Column="2" Grid.Row="0"></Button>
+<Button Content="button" Grid.Column="0" Grid.Row="1"></Button>
+<Button Content="button" Grid.Column="1" Grid.Row="1"></Button>
+<Button Content="button" Grid.Column="2" Grid.Row="1"></Button>
+<Button Content="button" Grid.Column="0" Grid.Row="2"></Button>
+<Button Content="button" Grid.Column="1" Grid.Row="2"></Button>
+<TextBlock Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Background="DarkOliveGreen" FontSize="24">Textvlock</TextBlock>
+
+        -->
+       <!--
+        
+         <Button Content="Click me" Width="300" Height="150" Background="AliceBlue">
+     <Button.Style>
+         <Style TargetType="Button">
+           
+             <Style.Triggers>
+                 <Trigger Property="IsMouseOver" Value="True">
+                     <Setter Property="FontSize" Value="30"/>
+                 </Trigger>
+             </Style.Triggers>
+         </Style>
+     </Button.Style>
+     
+ </Button>
+        
+        -->
+        <!--
+        //4 different data binding modes
+        
+        Binding Target:   <- oneway      binding source
+        Binding Target:   <- twoway ->   binding source
+        Binding Target:   <- oneway ->   one way to source
+        Binding Target:   <- OneTime      binding source-done in constructor so only one during initialization
+        
+        -->
+    <!--About data binding-->
+    <!--<StackPanel>
+    <TextBox Name="MyTextBox"  Width="100" Margin="50" Text="{Binding ElementName=MySlider,Path=Value,Mode=TwoWay ,UpdateSourceTrigger=PropertyChanged}" ></TextBox>
+    <Slider IsSnapToTickEnabled="True" Name="MySlider" Maximum="100" Minimum="0" />
+</StackPanel>-->
+    
+    <!--iNotifyPropertyChanged interface-->
+    <StackPanel>
+        <Label Content="Num1"/>
+        <TextBox Width="100" Height="30" Text="{Binding Path=Num1,Mode=TwoWay}"/>
+        <Label Content="Num2"/>
+        <TextBox Width="100" Height="30" Text="{Binding Path=Num2,Mode=TwoWay}"/>
+        <Label Content="Result"/>
+        <TextBox Width="100" Height="30" Text="{Binding Path=Result,Mode=TwoWay}"/>
+    </StackPanel>
+      
+</Window>
